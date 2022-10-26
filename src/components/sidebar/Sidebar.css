@@ -1,0 +1,206 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+:root{
+    --bg-sidebar:#E8E9ED;
+    --bg-main:#EFFAFF;
+    --bg-button:#007CBA;
+    --bg-popup:#C1EAFF;
+    --bg-entity-button:#00FFD4;
+    --bg-footer:#007CBA
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background: #E8E9ED */
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+ 
+    color: #999
+}
+
+a,
+a:hover,
+a:focus {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s
+}
+
+.navbar1 {
+    padding: 15px 10px; 
+    background: #fff;
+    
+    margin-bottom: 40px;
+    
+}
+
+#sidebar {
+  
+    /* background: var(--bg-sidebar); */
+    transition: all 0.3s;
+    /* max-height: 100%;
+    min-height: 100%; */
+}
+
+#sidebar.active {
+    margin-left: -250px
+}
+
+
+
+
+
+#sidebar ul p {
+    /* padding: 10px; */
+    /* font-size: 15px; */
+    display: block;
+    color: #fff
+}
+
+#sidebar ul li a {
+    /* padding: 10px; */
+    /* font-size: 1.1em; */
+    display: block
+}
+
+#sidebar ul li a:hover {
+    color: #fff;
+    background: #318fb5
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #318fb5
+}
+
+a[data-toggle="collapse"] {
+    position: relative
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    /* right: 20px; */
+    transform: translateY(-50%)
+}
+
+ul ul a {
+    /* font-size: 0.9em !important; */
+    /* padding-left: 30px !important; */
+    background: #318fb5
+}
+
+ul.CTAs {
+    padding: 20px
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    /* border-radius: 5px; */
+    margin-bottom: 5px
+}
+
+a.download,
+a.download:hover {
+    background: #318fb5;
+    color: #fff
+}
+
+#content {
+    width: 100%;
+    /* padding: 20px; */
+    min-height: 100vh;
+    transition: all 0.3s
+}
+
+.content-wrapper {
+    padding: 15px
+}
+
+@media(max-width:768px) {
+    #sidebar {
+        margin-left: -250px
+    }
+
+    #sidebar.active {
+        margin-left: 0px
+    }
+
+    #sidebarCollapse span {
+        display: none
+    }
+    table{
+       font-size: smaller; 
+    }
+}
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #373a47;
+  }
+  
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    background: #007CBA;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: black;
+  }
+  
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: white;
+    padding: 0;
+    font-size: 1.15em;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #E8E9ED;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: #E8E9ED;
+    padding: 0.8em;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }

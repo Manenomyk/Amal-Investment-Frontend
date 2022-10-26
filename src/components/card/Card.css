@@ -1,0 +1,33 @@
+/* * topnav */
+:root{
+    --bg-sidebar:#E8E9ED;
+    --bg-main:#EFFAFF;
+    --bg-button:#007CBA;
+    --bg-popup:#C1EAFF;
+    --bg-entity-button:#00FFD4;
+    --bg-footer:#007CBA
+}
+    #actives {
+        font-size:20px;
+        color: #007CBA;
+        border-bottom:solid 2px black ;
+        text-align:left;
+        font-weight: 700;
+        font-style: italic;
+        
+    }
+    #other{
+        font-size:20px;
+        color: black;
+        text-align:left;
+        font-weight: 700;
+        font-style: italic;
+        
+    }
+    /* body{
+        background-color: var(--bg-main);
+    } */
+   #button{
+       background-color: white;
+       color:black
+   }

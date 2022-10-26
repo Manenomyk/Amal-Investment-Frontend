@@ -1,0 +1,139 @@
+:root{
+    --bg-sidebar:#E8E9ED;
+    --bg-main:#EFFAFF;
+    --bg-button:#007CBA;
+    --bg-popup:#C1EAFF;
+    --bg-entity-button:#00FFD4;
+    --bg-footer:#007CBA
+}
+.section{
+    margin: 0px;
+    background-color: var(--bg-main);
+    width: 100%;
+    /* object-fit: contain; */
+    font-family: Arial;
+    overflow-x: hidden;
+    font-size: 20px;
+    height: 100vh;
+    
+   
+}
+
+.padd-2{
+    padding-left: 2px;
+    padding-top: 2px;
+}
+.padd-15{
+    padding: 15px;
+}
+
+#card{
+    background-color: white;
+    margin: 15vw;
+    margin: 2.5%;
+    width: 80vw;
+
+    
+}
+.card-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex:0% 0% 33.33%;
+
+}
+#card-text{
+    width: 100%;
+    word-spacing: 1px;
+    max-width: 33.33%;
+}
+.form-check{
+    display: flex;
+    flex-direction: column;
+}
+.form-check-radio{
+    display: flex;
+    flex-direction: row;
+    width:100% ;
+    
+}
+.radio-items{
+    padding-left: 15px;
+    width: 25%;
+}.doughnut{
+    display: flex;
+    flex-direction: row;
+    max-width: 33.33%;
+}
+#chartContainer{
+    width: 100px;
+    height: 100px;
+}
+.top-cards{
+    display:flex;
+    flex-direction: row;
+    max-width:23%;
+    padding: 15px;
+    justify-content: space-between;
+    margin:5px;
+    
+
+}
+.top-card-item{
+    background-color: white;
+    margin-left: 3%;
+    margin-right: 5%;
+    text-align: center;
+
+    width: 100%;
+    
+}
+.boarderless {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: thin;
+    background-color: white;
+    margin-left: 80px;
+  }
+  .progress-div{
+      height: 450px;
+      margin-top: 15px;
+      width:20%;
+      background-color: white;
+      text-align: center;
+  }
+
+  
+  .boarderless:focus{
+      outline: none;
+  }
+  .boarderlesss {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: white;
+  }
+
+  .prog{
+      content: "";
+  }
+  .line-graph{
+      background-color: white;
+      /* min-width: 60%; */
+      width:50%;
+      margin: 15px;
+      height: 450px;
+  }
+.middle-cards{
+    display:flex;
+    flex-direction: row;
+    
+    
+
+   
+}
+#legal-entity{
+    visibility: hidden;
+}

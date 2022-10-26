@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    
+}
+.sign{
+    background: #EFFAFF;
+}
+
+
+/* new changes */
+.yote1{
+    width: 1400px;
+  
+ margin-left: 100px;
+ margin-top: 80px; 
+    
+}
+
+
+section{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #EFFAFF;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+
+}
+section .imgbx1{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    
+}
+
+/* new changes */
+section .imgbx1 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+   padding-top: 20px;
+    width: 100%;
+   height: px;
+    padding-left: 40px;
+    display: grid;
+  
+}
+
+/* new changes */
+section .imgbx3 img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    padding-top: 200px;
+    width: 100%;
+    height: 570px;
+
+    padding-left: 40px;
+    padding-bottom: 18px;
+  
+}
+
+/* new changes */
+#insd1{
+    width: 65%;
+    margin-bottom:0px;
+    font-weight: 700;
+    font-size: 13PX;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 15px;
+}
+
+#ins1{
+    margin-bottom:5px ;
+    font-size: 12px;
+    color: #007CBA;
+
+
+}
+#sub1{
+    margin-top: 15px;
+    width: 170px;
+    margin-left: 18px;
+    height: 19px;
+}
+
+#linked1{
+    border-radius: 60%;
+}
+
+/* new changes */
+#insde1{
+    margin-bottom:10px ;
+    font-size: 18px;
+    color: rgb(134, 131, 131);
+    font-weight: 10;
+  cursor: pointer;
+}
+
+
+/* new changes */
+#in1{
+    width: 65%;
+    margin-bottom:0px;
+    font-weight: 700;
+    font-size: 13PX;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 15px;
+    
+}
+
+#no21{
+    background: white;
+    border-radius: 50%;
+}
+
+.uni1{
+    margin-bottom: 5px;
+    
+}
+
+section .content1{
+
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+
+/* new changes */
+section .content1 .form1{
+    
+    width: 56%;
+ border: 1px solid gray;
+ padding: 30px;
+ border-radius: 18px;
+ margin-left: 40%;
+ padding-top: 20px;
+ padding-bottom: 40px;
+ box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#aro1{
+    margin-left: 10px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+ h3{
+    color: rgb(95, 93, 93);
+   padding-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+   
+    letter-spacing: px;
+
+}
+
+section .content1 .form1 .input1 input{
+    width: 100%;
+    padding:5px;
+    outline: none;
+    border: 1px solid rgb(184, 178, 178);
+
+    color: rgb(61, 57, 57);
+    background: white;
+    border-radius: 10px;
+    font-size: 9px;
+}
+section .content1 .form1 .input1 input[type="submit"]{
+    background: #007CBA;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 3px;
+    font-size: 9px;
+}
+section .content1 .form1 .input1 input[type="submit"]:hover{
+    background: rgb(219, 215, 215);
+    color: rgb(126, 124, 124);
+}
+
+section .content1 .form1 .input1 p{
+    color: rgb(0, 0, 0);
+}
+
+/* new changes */
+section .content1 .form1 h5{
+    margin-left: 10px;
+    color: rgb(90, 88, 88);
+    font-size: 18px;
+}
+
+/* new changes */
+section .content1 .form1 h4{
+    color: gray;
+text-align: center;
+margin:10px 0 10px ;
+font-weight: 500;
+font-size: 22px;
+}
+section .content1 .form1 .uni1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .content .form1 .uni1 li{
+    list-style: none;
+    border-radius: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    border-radius: 12px;
+  
+    cursor: pointer;
+    padding-right: 3px;
+  
+}
+
+section .content1 .form1 .uni1 li ion-icon{
+  
+    filter: invert(1);
+}
+
+
+#lin1 {
+    
+    background: #007CBA;
+    border-radius: 16px;
+    margin-right:10px ;
+    
+}
+#lin1:hover{
+    background: #1f9ad8;
+    
+}
+
+#lins1 {
+    background: white;
+    border-radius: 16px;
+    margin-right:10px ;
+    padding-right: 10px;
+}
+
+#lins1:hover{
+    background: #f1f1f1;
+    
+}
+
+
+#linss1 {
+    background: #007CBA;
+    border-radius: 16px;
+}
+
+#linss1:hover{
+    background: #1f9ad8;
+    
+}
+
+
+
+#yo1{
+    color: black;
+    text-decoration: none;
+   
+}
+ /* new changes */
+#sap1{
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    padding-right: 10px;
+   padding-bottom: 10px;
+  
+   
+}
+
+
+#sap21{
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    padding-right: 10px;
+   
+}
+#sap31{
+    font-size: 13px;
+    color: white;
+    padding-top: 2px;
+    padding-right: 10px;
+    
+}
+
+/* new changes */
+#orr1{
+    width: 22px;
+    margin-left: 45%;
+     border-radius: 50%;
+     z-index: 200;
+    border: 1px solid gray;
+    margin-bottom: 0px;
+    position: relative;
+    margin-top: 5px;
+  }
+
+  
+ #insd1::after{
+      content: '';
+      display: block;
+     width:24px;
+     height: 1px;
+     background: rgb(181, 181, 184);
+     position: absolute;
+     left: 30;
+     z-index: 1;
+     bottom: 6.5%;
+  }
+
+
+  
+@media (max-width: 568px)
+{
+
+}
+@media (max-width: 390px)
+{
+  
+    
+}
+
+
+@media (max-width: 1100px)
+{
+   
+}
