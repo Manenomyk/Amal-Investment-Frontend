@@ -1,41 +1,15 @@
+:root{
+  --bg-sidebar:#E8E9ED;
+  --bg-main:#EFFAFF;
+  --bg-button:#007CBA;
+  --bg-popup:#C1EAFF;
+  --bg-entity-button:#00FFD4;
+  --bg-footer:#007CBA
+}
+body{
+  background-color: #00FFD4;
+}
 .error{
   color: red;
   margin-left: 50px;
 }
-
-@media screen and (max-width: 992px) {
- 
-  .middle-cards{
-      display: flex;
-      flex-direction: column;
-  }
-  .progress-div{
-    width:100%;
-  }
-  .line-graph{
-    width:100%
-  }
-  /* .mpemba{
-    display:flex;
-    flex-direction: column;
-    max-width:25%;
-    padding: 10px;
-    justify-content: space-between; */
-    .mpemba{
-      display:flex;
-     flex-direction: column;
-      max-width:25%;
-      padding: 10px;
-      justify-content: space-between;
-  }
-  /* end card,line graph,progressive bar,prog circle */
-  /* raise css */
-  .top-row{
-    display: flex;
-    width: 50%;
-    /* flex-direction: row; */
-    
-    flex: 0 0 33.33%;
-}
-}
-
