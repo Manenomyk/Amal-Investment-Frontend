@@ -2,11 +2,52 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  /* text-decoration: none; */
   list-style: none;
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #EFFAFF;
+}
+
+#current{
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+.homecardbtn{
+  padding: 5px 30px;
+  border: 1px solid gray;
+  border-radius: 12px;
+  background-color: #007CBA;
+  color: white;
+}
+
+.homecard{
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+#homeservices{
+  margin-top: 4rem;
+}
+.homehr{
+  margin-top: 4rem;
+}
+
+.servicescards{
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+#contactpage{
+  margin-top: 5rem;
+  background-color: #007CBA;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.contheads{
+  margin-bottom: 1rem;
 }

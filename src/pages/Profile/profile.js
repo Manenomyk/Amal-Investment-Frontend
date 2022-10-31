@@ -3,10 +3,14 @@ import * as pro from 'react-bootstrap';
 import './profile.css';
 import { IoMdContact } from "react-icons/io";
 import {ProFormi} from './ProFormi';
+import Sidebar from '../Sidebar/Sidebar';
 
 function profile() {
   return (
-    <div>
+    <div id='wholeprof' className='d-flex'>
+      <div>
+        <Sidebar />
+      </div>
       <pro.Container>
         <div className='mt-5 '>
           <h3 className='edit'><i><u>Edit Profile</u></i></h3>
