@@ -1,8 +1,11 @@
 import React from 'react'
+import {anan} from './Navbar';
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      qwertyui
+    </div>
   )
 }
 

@@ -12,7 +12,6 @@ import invest1 from '../../images/invest 6.jpg';
 function Login() {
   return (
     <div className='regpage'>
-        
 
 
         <reg.Container className='mt-5'>

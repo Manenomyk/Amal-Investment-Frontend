@@ -2,14 +2,14 @@
     border: 1px solid rgb(214, 211, 211);
     border-radius: 5px;
     box-shadow: 0px 3px 5px rgba(109, 107, 107, 0.5);
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 }
 .contaicon{
-    font-size: 6rem;
+    font-size: 5rem;
 }
 
 .probtn{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 7px 40px;
     border-radius: 12px;
     border: 1px solid gray;
@@ -23,7 +23,7 @@
     margin-bottom: 1rem;
 }
 .personal{
-margin-left: 25%;
+margin-left: 3%;
 margin-right: 1rem;
 padding: 5px 20px;
 border: 1px solid grey;

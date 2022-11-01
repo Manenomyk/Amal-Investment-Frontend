@@ -4,6 +4,7 @@ import './profile.css';
 import { IoMdContact } from "react-icons/io";
 import {ProFormi} from './ProFormi';
 import Sidebar from '../Sidebar/Sidebar';
+import {Link} from 'react-router-dom';
 
 function profile() {
   return (
@@ -12,17 +13,17 @@ function profile() {
         <Sidebar />
       </div>
       <pro.Container>
-        <div className='mt-5 '>
+        <div className='mt-1 '>
           <h3 className='edit'><i><u>Edit Profile</u></i></h3>
           <div className='btnclass'>
-            <button className='personal'><i><b>Personal</b></i></button>
-            <button className='entity'><i><b>Entity</b></i></button>
+            <Link to={"/profile"}><button className='personal'><i><b>Personal</b></i></button></Link>
+            <Link to={"/entity"}><button className='entity'><i><b>Entity</b></i></button></Link>
           </div>
         </div>
 
         <pro.Container className=''>
           <pro.Row>
-            <pro.Col id='procontent' lg={8} className='mx-auto'>
+            <pro.Col id='procontent' lg={7} className='mx-auto'>
                 <div className='text-center'>
                     <IoMdContact className='contaicon' /> 
                 </div>

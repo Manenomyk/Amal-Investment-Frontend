@@ -1,0 +1,52 @@
+
+.btnclas{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.person{
+    margin-left: 25%;
+    margin-right: 1rem;
+    padding: 5px 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    }
+    
+    .entit{
+        margin-right: 2rem;
+        padding: 5px 20px;
+        background-color: #00FFD4;
+        border: 1px solid grey;
+        border-radius: 10px;  
+        cursor: pointer;
+    }
+    #entcont{
+        gap: 10px;
+    }
+    
+    #entinput{
+        width: 200px;
+    }
+    #entdetails{
+        border: 1px solid rgb(255, 254, 254);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+    .entbtn{
+        padding: 5px 20px;
+        border: 1px solid gray;
+        border-radius: 12px;
+        margin-top: 1rem;
+        /* margin-bottom: 1rem; */
+        background-color: #007CBA;
+        color: white;
+    }
+
+    .myenti{
+        font-size: 24px;
+        margin-left: 20px;
+    }

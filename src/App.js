@@ -28,7 +28,7 @@ import Forgot from './pages/Admin/forgot/Forgot';
 import './App.css';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+ 
 axios.defaults.withCredentials = true;
 
 axios.defaults.baseURL = "192.168.1.10:10002";
