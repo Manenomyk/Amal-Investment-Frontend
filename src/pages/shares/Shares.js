@@ -1,21 +1,20 @@
 import React from 'react';
 import {Col,Row,Container,Nav,Card} from 'react-bootstrap';
 import ProfileNav from '../../components/card/ProfileNav';
-import Sidebar from '../../components/sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import  "../../components/card/Card.css";
 import { Link } from "react-router-dom";
 import './shares.css'
 function Shares() {
 return   (
-  <div>
+  <div className='d-flex'>
   
             <Sidebar/>
-            <div className=''></div>
-                <Container>
-                <div className="p-1">
-                <ProfileNav title="Jim" />
-                </div>
-              <Nav className= "mt-3 pt-3 pb-2"
+          
+          
+                <Container >
+             
+              <Nav className= "mt-2 pt-3 pb-2"
                     activeKey="/home"
                     onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                   >
@@ -32,11 +31,11 @@ return   (
                     <Col md= {8} sm= {4} xs= {12} >
                     <input type="text" placeholder="Search"/>
                     </Col>
-                    <Col md= {2} sm= {3} xs= {4}><button  className="btn btn-outline-dark">Filter</button></Col>
-                    <Col md= {2} sm= {1} xs= {2}><button className="btn btn-outline-dark">Export</button></Col>
+                    <Col md= {2} sm= {3} xs= {4}><button  id='entibtn' className="btn btn-outline-dark">Filter</button></Col>
+                    <Col md= {2} sm= {1} xs= {2}><button id='entibtn' className="btn btn-outline-dark">Export</button></Col>
                     </Row>
                     </Card.Body>
-                    </Card>
+              </Card>
                   
                 
                     <table className="table table-striped" style={{fontSize: "small"}}>
@@ -110,9 +109,10 @@ return   (
                           </table> 
 
                           </Container>
-       
-                          
-                          </div>
+                         
+          
+  
+                 </div>
               )
             }
         

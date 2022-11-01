@@ -1,0 +1,42 @@
+#entibtn{
+    padding: 3px 20px;
+}
+.buybtn{
+    padding: 2px 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #007CBA;
+    color: white;
+}
+.buytext{
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+#buydet{
+    margin-left: 2rem;
+    gap: 3rem;
+}
+
+#buyinp{
+    width: 50px;
+    height: 2rem;
+}
+#buyinp1{
+    width: 8rem;
+    height: 2rem;
+}
+#buyamount{
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+#buyentin{
+    gap: 2rem;
+}
+.buycheck{
+    margin-left: 24%;
+    margin-bottom: 3rem;
+}
+#buybtn{
+    gap: 2rem;
+}

@@ -1,15 +1,37 @@
 import React from 'react';
 import "./shares.css";
-import Sidebar from '../../components/sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import Tooltip from '../../components/tooltip/Tooltip';
-import {Col,Row,Container,Carousel,Nav} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import {Col,Row,Container,Carousel,Nav, Card} from 'react-bootstrap';
 function Newshares() {
   return(
-    <div>
+    <div className='d-flex'>
    <Sidebar/>
-    <div className="pt-5 mt-5 container">
+    <div className="pt-1 mt-1 container">
 
-
+    <Nav className= "pt-3 pb-2"
+                    activeKey="/home"
+                    onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+                  >
+                    <Nav.Item>
+                      <Nav.Link href="/shares"  id="other" >My Shares</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link href="/Newshares" id="actives">New shares</Nav.Link>
+                    </Nav.Item>
+              </Nav>
+              <Card>
+                <Card.Body>
+                <Row>
+                    <Col md= {8} sm= {4} xs= {12} >
+                    <input type="text" placeholder="Search"/>
+                    </Col>
+                    <Col md= {2} sm= {3} xs= {4}><button  id='entibtn' className="btn btn-outline-dark">Filter</button></Col>
+                    <Col md= {2} sm= {1} xs= {2}><button id='entibtn' className="btn btn-outline-dark">Export</button></Col>
+                    </Row>
+                    </Card.Body>
+              </Card>
       <table className="table table-striped" style={{fontSize: "small"}}>
                           <thead>
                             <tr>

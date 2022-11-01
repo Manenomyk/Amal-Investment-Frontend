@@ -4,6 +4,7 @@ import inv from '../../images/Assets/icons/inv.png';
 import cont from '../../images/Assets/icons/cont.png';
 import hom from '../../images/Assets/icons/hom.png';
 import * as sbar from 'react-bootstrap';
+import multicolor from '../../images/Assets/icons/Multicolor.png';
 
 
 export const Sbarcontent = [
@@ -48,13 +49,25 @@ export const Sbarcontent = [
         icon:
         <sbar.Image
         className="d-block mx-auto mt-2"
+        src={multicolor}
+        style={{fontSize:"25px"}}
+        alt="First slide"
+        fluid
+        />,
+        title: "Raise capital",
+        link: "./Shares"
+    },
+    {
+        icon:
+        <sbar.Image
+        className="d-block mx-auto mt-2"
         src={inv}
         style={{fontSize:"25px"}}
         alt="First slide"
         fluid
         />,
         title: "Shares",
-        link: "./Loans"
+        link: "./Shares"
     },
     
     
