@@ -1,86 +1,106 @@
 import React from 'react';
-import ProfileNav from '../../components/card/ProfileNav';
-import Sidebar from '../../components/sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import Tooltip from '../../components/tooltip/tooltipA';
 import "./invest.css";
-
+import * as invest from 'react-bootstrap';
+import tooltip from '../../images/Assets/icons/tooltip.png'
 function Invest() {
 
   return (
-    <div className='section'>
+    <div className='d-flex'>
     <Sidebar/>
-    <ProfileNav/>
-      <div className='join'>
-          {/* sidebar div */}
 
-          {/* invest page div */}
 
-          <div className='container'>
-              {/* navbar component */}
-              <div id='card'>
-                  <div id='card-body'>
-                    <h2 id="card-title heading">Thanks for choosing to invest in uwezo estate</h2>
-                    <div className="card-content ">
+    <invest.Container>
+        <invest.Row>
+            <invest.Col lg={8} className="mx-auto mt-3">
+                <invest.Card >
+                    <invest.Card.Title className='text-center'>
+                        <h3><i><u>Thanks for choosing to invest in uwezo estate</u></i></h3>
+                    </invest.Card.Title>
+
+                    <invest.Card.Body className='mx-auto'>
+                    <div  id='investdeta' className="d-flex ">
                         <p id="card-text">Goal Amount:$300M</p>
                         <p id="card-text">Goal Amount:$300M</p>
                         <p id="card-text">Goal Amount:$300M</p>
                     </div> 
-                    <div className="card-content ">
+                    <div id='investdeta' className="d-flex ">
                     <p id="card-text">Due Date:9/04/2022</p>
-                    <p id="card-text">Type:Equity | Debt |revenue share</p>
-                    
-                </div>
-                  </div>
-              </div>
+                    <p id="card-text">Type:Equity | Debt |revenue share</p> 
+                    </div>
+                    </invest.Card.Body>
+                </invest.Card>
+            </invest.Col>
+        </invest.Row>
 
-              <div className="form-group item ">
-                <label htmlFor="">amount you want to raise </label>
-                <div className="join" style={{width: "70vw"}}>
-                <input type="text"  className="form-control" style={{width: "20%"}} id="exampleFormControlInput1" placeholder="AMOUNT"></input>
-                
-                    <select>
+        <invest.Row className='mt-2 mb-2'>
+            <invest.Col lg={8} className="mx-auto">
+                <p className=''>How much would you like to invest?</p>
+                <div className='d-flex'>
+                <input id='inveoption' placeholder='AMOUNT' className='form-control shadow-none' type="text" />
+                <select id='inveoption1' className='form-control shadow-none'>
                         <option >Euros</option>
                         <option>$USD</option>
                         <option>GBP</option>
                         <option>KSH</option>
                     </select>
                 </div>
-            </div> 
-            <div className="form-check">
-                <h4>Deal Type?</h4>
-                <div>
+            </invest.Col>
+        </invest.Row>
+
+        <invest.Row>
+            <invest.Col lg={8} className="mx-auto">
+            <p>Deal Type?</p>
+
+            <div id='investtype' className='d-flex mb-1'>
+                <div className='d-flex'>
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                     <label className="form-check-label" htmlFor="defaultCheck1">
-                        Equity :
+                        Equity:
                     </label>
-                    <input style={{marginLeft:"90px"}} className="boarderless" type="text" placeholder="Amount"/>
-                     
+                    </div>
+                    <input id='inveinputs1' className="form-control shadow-none" type="text" placeholder="Amount"/>
                 </div>
-                <div>
 
+                <div id='investtype' className='d-flex mb-1'>
+                   <div className='d-flex'>
+                   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                    Debt:
+                    </label>
+                   </div>
+                    <input id='inveinputs2' className="form-control shadow-none" type="text" placeholder="Amount"/>
+                </div>
+
+                <div id='investtype' className='d-flex mb-1'>
+                <div className='d-flex'>
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                     <label className="form-check-label" htmlFor="defaultCheck1">
-                    Debt :
-                    </label>
-                    <input className="boarderless" type="text" placeholder="Amount" style={{marginLeft: "100px"}}/>
-                </div>
-                <div>
-
-                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                    <label className="form-check-label" htmlFor="defaultCheck1">
-                    revenue share :
-                    <input style={{marginLeft: "10px"}} className="boarderless" type="text" placeholder="Amount"/>
+                    revenue share : 
                     </label>
                 </div>
-            </div>
+                    
+                    <input id='inveinputs' className="form-control shadow-none" type="text" placeholder="Amount"/>
+                    
+                    
+                </div>
 
-            <div className="form-check-radio">
-                <p className="radio-items">i want to invest as :</p>
-                <div className="radio-items">
+            </invest.Col>
+        </invest.Row>
+
+
+        <invest.Row className='mt-2'>
+            <invest.Col lg={8} className="mx-auto">
+            
+
+             <div id='investoptions' className='d-flex'>
+             <p className="radio-items">I want to invest as :</p>
+               <div className="">
                     <input className="form-check-input"
                      type="radio" 
                      name="flexRadioDefault" 
-                    //  onClick="closeLegal()"
+                    
                      id="flexRadioDefault1"/>
                     <label className="form-check-label" htmlFor="flexRadioDefault1">
                         person
@@ -91,7 +111,7 @@ function Invest() {
                     type="radio"
                     name="flexRadioDefault" 
                     id="flexRadioDefault1"
-                    // onClick="openLegal() "
+                 
                     />
                     <label className="form-check-label" htmlFor="flexRadioDefault1">
                         Entity
@@ -100,18 +120,48 @@ function Invest() {
                 <div id="legal-entity" >
                 
                                     
-                    <select>
+                    <select className='form-control shadow-none'>
                         <option >Legal entity</option>
                         <option>jamal enterprise</option>
                         <option>Lacharme collection</option>
                         <option>elfantasia group</option>
                     </select>
             </div> 
-            </div>
 
-            <div><Tooltip/></div>
-          </div>
-      </div>
+               </div>
+            </invest.Col>
+        </invest.Row>
+           
+        <invest.Row>
+            <invest.Col lg={8} className='mx-auto'>
+            <div className=''>
+                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                    Debt:
+                    </label>
+            </div>
+            </invest.Col>
+        </invest.Row>
+
+        <invest.Row>
+            <invest.Col lg={12} id="buybtn" className=" d-flex justify-content-center mt-4">
+            <div>
+              <invest.Image
+                className="d-block mx-auto"
+                src={tooltip}
+                style={{fontSize:"15px", cursor:"pointer"}}
+                alt="First slide"
+                fluid
+                />
+              </div>
+              <div>
+                <button className='buybtn'>BUY</button>
+              </div>
+            </invest.Col>
+        </invest.Row>
+    </invest.Container>
+
+    
     </div>
   );
 }

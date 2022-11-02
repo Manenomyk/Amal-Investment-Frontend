@@ -6,3 +6,44 @@
     --bg-entity-button:#00FFD4;
     --bg-footer:#007CBA
 }
+
+#investdeta{
+    gap: 3rem;
+}
+#investoptions{
+    gap: 3rem;
+}
+
+#inveoption{
+    width: 30vw;
+}
+#inveoption1{
+    width: 100px;
+}
+#investtype{
+    gap: 3rem;
+}
+
+#inveinputs{
+    width: 16vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: none;
+}
+#inveinputs1{
+    width: 16vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: none;
+    margin-left: 4rem;
+}
+#inveinputs2{
+    width: 16vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: none;
+    margin-left: 4.5rem;
+}

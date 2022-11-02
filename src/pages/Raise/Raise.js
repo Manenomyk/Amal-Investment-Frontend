@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsUpload } from 'react-icons/bs';
-import Sidebar from '../../components/sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import "./raise.css";
 import ProfileNav from '../../components/card/ProfileNav';
 
@@ -11,10 +11,10 @@ import {FaUpload } from "react-icons/fa";
 import Tooltip from '../../components/tooltip/Tooltip';
 function Raise() {
   return (
-      <div>
+      <div className='d-flex'>
 
           <Sidebar/>
-          <ProfileNav/> 
+          
       <section>
       {/* <div className='section'>
       

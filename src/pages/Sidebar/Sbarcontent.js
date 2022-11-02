@@ -43,7 +43,7 @@ export const Sbarcontent = [
         fluid
         />,
         title: "Investment",
-        link: "./Shares"
+        link: "./invest"
     },
     {
         icon:
@@ -55,7 +55,7 @@ export const Sbarcontent = [
         fluid
         />,
         title: "Raise capital",
-        link: "./Shares"
+        link: "./raise"
     },
     {
         icon:
