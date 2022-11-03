@@ -1,0 +1,26 @@
+#raisecont{
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#regInput1{
+    width: 200px;
+    height: 30px;
+ }
+
+ #deta{
+    gap: 1rem;
+ }
+ #raiseoption{
+    width: 100px;
+    height: 30px;
+    /* margin-top: 1.5rem; */
+    font-size: 14px;
+ }
+.raisefiles{
+   margin-left: 5.3rem;
+}
+#raisefiles{
+   margin-left: 5.3rem;
+}

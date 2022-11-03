@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
-import Tooltip from '../../components/tooltip/tooltipA';
 import "./invest.css";
 import * as invest from 'react-bootstrap';
 import tooltip from '../../images/Assets/icons/tooltip.png'
