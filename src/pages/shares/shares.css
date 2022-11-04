@@ -40,3 +40,19 @@
 #buybtn{
     gap: 2rem;
 }
+
+#viewmore{
+    border: 1px solid grey;
+}
+#viewbtn{
+padding: 2px 20px;
+border: 1px solid white;
+background-color: #007CBA;
+color: white;
+font-size: 22px;
+border-radius: 5px;
+}
+
+#viewdetails{
+    gap: 5rem;
+}
