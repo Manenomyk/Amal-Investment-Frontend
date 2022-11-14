@@ -5,7 +5,6 @@ import Login from './pages/login/Login';
 import Register from './pages/Register/Register';
 import Profile from './pages/Profile/profile';
 import Entity from './pages/Entity/Entity';
-// import Register from './pages/Register/Register';
 import ActiveProject from './pages/projects/ActiveProject';
 import Newproject from './pages/projects/Newproject';
 import ViewMoreprojects from './pages/projects/ViewMoreprojects';
@@ -17,11 +16,19 @@ import ViewMoreShares from './pages/shares/ViewMoreShares';
 import Invest from './pages/invest/Invest';
 import Raise from './pages/Raise/Raise';
 
+
+//admin
 import InvestorDelete from './pages/Admin/InvestorDelete';
 import InvestorApproval from './pages/Admin/InvestorApproval';
-
 import ProjectApproval from './pages/Admin/NewProjects/ProjectApproval';
 import ProjectDelete from './pages/Admin/NewProjects/ProjectDelete';
+import AdminDashboard from './pages/Admin/AdminDashboard/AdminDashboard';
+import Adminshares from './pages/Admin/Adminshares/Adminshares';
+import AdminSidebar from './pages/Admin/AdminSidebar/Sidebar';
+import Approveinvestor from './pages/Admin/Approveinvestor/Approveinvestor';
+import Approveproject from './pages/Admin/Approveproject/Approveproject';
+import Investors from './pages/Admin/Investors/Investors';
+import AdminNewproject from './pages/Admin/AdminNewproject/AdminNewproject';
 
 import Forgot from './pages/Admin/forgot/Forgot';
 
@@ -56,10 +63,18 @@ function App() {
         <Route path="/invest" element={<Invest/>}/>
         <Route path="/raise" element={<Raise/>}/>
 
+      {/* admin Routes */}
         <Route path="/projoApproval" element={<ProjectApproval/>}/>
         <Route path="/projoDelete" element={<ProjectDelete/>}/>
         <Route path="/investadminDelete" element={<InvestorDelete/>}/>
-        <Route path="/investApproval" element={<InvestorApproval/>}/>
+        <Route path="/adminshares" element={<Adminshares />}/>
+        <Route path="/admindashboard" element={<AdminDashboard/>}/>
+        <Route path="/adminsidebar" element={<AdminSidebar/>}/>
+        <Route path="/approveinvestor" element={<Approveinvestor/>}/>
+        <Route path="/approveproject" element={<Approveproject/>}/>
+        <Route path="/investorApproval" element={<InvestorApproval/>}/>
+        <Route path="/investors" element={<Investors />}/>
+        <Route path="/adminnewproject" element={<AdminNewproject/>}/>
 
         <Route path="/forgot" element={<Forgot/>}/>
         
