@@ -12,7 +12,7 @@ return   (
             <Sidebar/>
           
           
-                <Container >
+            <Container >
              
               <Nav className= "mt-2 pt-3 pb-2"
                     activeKey="/home"

@@ -24,6 +24,7 @@ import ProjectApproval from './pages/Admin/NewProjects/ProjectApproval';
 import ProjectDelete from './pages/Admin/NewProjects/ProjectDelete';
 import AdminDashboard from './pages/Admin/AdminDashboard/AdminDashboard';
 import Adminshares from './pages/Admin/Adminshares/Adminshares';
+import MoreShares from './pages/Admin/Adminshares/MoreShares';
 import AdminSidebar from './pages/Admin/AdminSidebar/AdminSidebar';
 import Approveinvestor from './pages/Admin/Approveinvestor/Approveinvestor';
 import Approveproject from './pages/Admin/Approveproject/Approveproject';
@@ -68,6 +69,7 @@ function App() {
         <Route path="/projoDelete" element={<ProjectDelete/>}/>
         <Route path="/investadminDelete" element={<InvestorDelete/>}/>
         <Route path="/adminshares" element={<Adminshares />}/>
+        <Route path="/moreshares" element={<MoreShares />}/>
         <Route path="/admindashboard" element={<AdminDashboard/>}/>
         <Route path="/adminsidebar" element={<AdminSidebar/>}/>
         <Route path="/approveinvestor" element={<Approveinvestor/>}/>

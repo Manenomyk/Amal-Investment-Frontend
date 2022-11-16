@@ -23,10 +23,6 @@ export const AdminSbarcontent = [
         link: "./Investors"
     },
     {
-        title: "Projects",
-        link: "./Approveproject"
-    },
-    {
         title: "Approve Investors",
         link: "./Approveinvestor"
     },
