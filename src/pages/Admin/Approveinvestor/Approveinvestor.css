@@ -1,0 +1,39 @@
+
+:root{
+    --bg-sidebar:#E8E9ED;
+    --bg-main:#EFFAFF;
+    --bg-button:#007CBA;
+    --bg-popup:#C1EAFF;
+    --bg-entity-button:#00FFD4;
+    --bg-footer:#007CBA
+}
+
+#admindash{
+    border: 1px solid rgb(238, 237, 237);
+    margin-top: 3rem;
+    box-shadow: 0px 3px 5px rgba(109, 107, 107, 0.5);
+    
+}
+
+#cardcont{
+    gap: 10rem;
+    margin-top: 2rem;
+}
+#cardcont1{
+    gap: 7rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#admiapprov{
+    margin-top: 10rem;
+}
+
+.approvbtn{
+    padding: 4px 20px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    background-color: #007CBA;
+    color: white;
+    font-size: large;
+}

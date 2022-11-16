@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 function Adminshares() {
   return (
-    <div>Adminshares</div>
+    <div className='d-flex'>
+      <AdminSidebar/>
+      <div>
+      Adminshares
+      </div>
+    </div>
   )
 }
 

@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 function AdminNewproject() {
   return (
-    <div>AdminNewproject</div>
+    <div className='d-flex'>
+      <AdminSidebar/>
+      <div>
+      AdminNewproject
+      </div>
+    </div>
   )
 }
 

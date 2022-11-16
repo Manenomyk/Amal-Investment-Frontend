@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 function Investors() {
   return (
-    <div>Investors</div>
+    <div>
+      <AdminSidebar/>
+      <div>
+      Investors
+      </div>
+    </div>
   )
 }
 

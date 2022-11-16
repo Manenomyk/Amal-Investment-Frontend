@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 function Approveproject() {
   return (
-    <div>Approveproject</div>
+    <div>
+      <AdminSidebar/>
+      <div>
+      Approveproject
+      </div>
+    </div>
   )
 }
 

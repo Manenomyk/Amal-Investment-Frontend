@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 // import Navbar from '../Navbar/Navbar';
-import { Sbarcontent } from './Sbarcontent';
+import { AdminSbarcontent } from './AdminSbarcontent';
 import { IoIosContact } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 // import { Oval } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../images/Assets/icons/logo 1.png';
+import logo from '../../../images/Assets/icons/logo 1.png';
 import * as sbarmain from 'react-bootstrap';
 import axios from 'axios';
 
 
 
-import './Sidebar.css';
+import './AdminSidebar.css';
 
-function Sidebar() {
+function AdminSidebar() {
 
 
 
@@ -105,19 +105,14 @@ function Sidebar() {
 
                 
                 <ul className='list'>
-                     {Sbarcontent.map((val,key)=>{
+                     {AdminSbarcontent.map((val,key)=>{
                     return (
                         
                         <li key={key} 
                         
                         className="row"
                         id={window.location.pathname == val.link ? "active" : ""}
-                        onClick={()=>{window.location.pathname = val.link}}> 
-
-                        <div id='icon'>
-                            
-                        {val.icon}
-                        </div>
+                        onClick={()=>{window.location.pathname = val.link}}>
 
 
                           <div id='title'>
@@ -168,4 +163,4 @@ function Sidebar() {
      );
 }
 
-export default Sidebar;
+export default AdminSidebar;

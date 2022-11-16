@@ -24,7 +24,7 @@ import ProjectApproval from './pages/Admin/NewProjects/ProjectApproval';
 import ProjectDelete from './pages/Admin/NewProjects/ProjectDelete';
 import AdminDashboard from './pages/Admin/AdminDashboard/AdminDashboard';
 import Adminshares from './pages/Admin/Adminshares/Adminshares';
-import AdminSidebar from './pages/Admin/AdminSidebar/Sidebar';
+import AdminSidebar from './pages/Admin/AdminSidebar/AdminSidebar';
 import Approveinvestor from './pages/Admin/Approveinvestor/Approveinvestor';
 import Approveproject from './pages/Admin/Approveproject/Approveproject';
 import Investors from './pages/Admin/Investors/Investors';
