@@ -1,12 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./shares.css";
 import * as view from 'react-bootstrap';
 import Sidebar from '../Sidebar/Sidebar';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 function ViewMoreShares() {
+  const [isOpen ,setIsOpen] = useState(false);
+
   return (
     <div className='d-flex'>
-       <Sidebar/> 
+       <div>
+                    {!isOpen ?
+                  (
+                    <div style={{marginTop:"1rem",fontSize:'25px', cursor:"pointer",marginLeft:"1rem"}}>
+                      <FaBars onClick={() => setIsOpen(!isOpen)} />
+                      </div>
+                  ):
+                  (
+                    
+                  <div>
+                  <IoIosArrowDropleft onClick={() => setIsOpen(!isOpen)} style={{fontSize:"2rem", color:"#007CBA",position:"fixed", top:"2%", marginLeft:"187px", cursor:"pointer" }} /> 
+                  <Sidebar/>
+
+                  </div>
+
+                  )  
+                  }
+              </div>
 
         <view.Container>
             <view.Row className='mt-3 mb-4'>

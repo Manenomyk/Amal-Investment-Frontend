@@ -1,15 +1,60 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Col,Row,Container,Nav,Card} from 'react-bootstrap';
 import ProfileNav from '../../components/card/ProfileNav';
 import Sidebar from '../Sidebar/Sidebar';
 import  "../../components/card/Card.css";
 import { Link } from "react-router-dom";
 import './shares.css'
+import axios from 'axios';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
+
 function Shares() {
+
+
+const [isOpen ,setIsOpen] = useState(false);
+
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("/user/show-my-share/{id}");
+          console.log(data.data.data);
+          getDetails(data.data.data);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
+
+
 return   (
   <div className='d-flex'>
   
-            <Sidebar/>
+           <div>
+                    {!isOpen ?
+                  (
+                    <div style={{marginTop:"1rem",fontSize:'25px', cursor:"pointer",marginLeft:"1rem"}}>
+                      <FaBars onClick={() => setIsOpen(!isOpen)} />
+                      </div>
+                  ):
+                  (
+                    
+                  <div>
+                  <IoIosArrowDropleft onClick={() => setIsOpen(!isOpen)} style={{fontSize:"2rem", color:"#007CBA",position:"fixed", top:"2%", marginLeft:"187px", cursor:"pointer" }} /> 
+                  <Sidebar/>
+
+                  </div>
+
+                  )  
+                  }
+              </div>
           
           
             <Container >
@@ -52,7 +97,11 @@ return   (
                                       </thead>
 
                                   <tbody>
-                                    <tr>
+                                    {details.map((item,index)=>(
+           
+                                        console.log('i',item),
+
+                                    <tr key={index}>
                                       <th scope="row"> 
                                         <input type="checkbox" name="input"/> </th>
                                       <td>kazi Coffee</td>
@@ -64,6 +113,8 @@ return   (
                                       
           
                                     </tr>
+
+                                    ) )}
                                   </tbody>
 
                                   <tbody>

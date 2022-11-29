@@ -1,16 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as pro from 'react-bootstrap';
 import './profile.css';
 import { IoMdContact } from "react-icons/io";
 import {ProFormi} from './ProFormi';
 import Sidebar from '../Sidebar/Sidebar';
 import {Link} from 'react-router-dom';
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
 
-function profile() {
+function Profile() {
+
+  const [isOpen ,setIsOpen] = useState(false);
+
+
   return (
     <div id='wholeprof' className='d-flex'>
       <div>
-        <Sidebar />
+        <div>
+                    {!isOpen ?
+                  (
+                    <div style={{marginTop:"1rem",fontSize:'25px', cursor:"pointer",marginLeft:"1rem"}}>
+                      <FaBars onClick={() => setIsOpen(!isOpen)} />
+                      </div>
+                  ):
+                  (
+                    
+                  <div>
+                  <IoIosArrowDropleft onClick={() => setIsOpen(!isOpen)} style={{fontSize:"2rem", color:"#007CBA",position:"fixed", top:"2%", marginLeft:"187px", cursor:"pointer" }} /> 
+                  <Sidebar/>
+
+                  </div>
+
+                  )  
+                  }
+              </div>
       </div>
       <pro.Container>
         <div className='mt-1 '>
@@ -42,4 +65,4 @@ function profile() {
   )
 }
 
-export default profile
+export default Profile

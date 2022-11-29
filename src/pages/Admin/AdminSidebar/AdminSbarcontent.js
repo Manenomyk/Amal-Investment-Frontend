@@ -22,10 +22,7 @@ export const AdminSbarcontent = [
         title: "Investors",
         link: "./Investors"
     },
-    {
-        title: "Approve Investors",
-        link: "./Approveinvestor"
-    },
+
     {
         title: "Shares",
         link: "./Adminshares"

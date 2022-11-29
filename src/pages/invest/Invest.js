@@ -1,13 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import "./invest.css";
 import * as invest from 'react-bootstrap';
 import tooltip from '../../images/Assets/icons/tooltip.png'
+import { FaBars } from "react-icons/fa";
+import { IoIosArrowDropleft } from "react-icons/io";
+
 function Invest() {
+
+    const [isOpen ,setIsOpen] = useState(false);
 
   return (
     <div className='d-flex'>
-    <Sidebar/>
+            <div>
+                    {!isOpen ?
+                  (
+                    <div style={{marginTop:"1rem",fontSize:'25px', cursor:"pointer",marginLeft:"1rem"}}>
+                      <FaBars onClick={() => setIsOpen(!isOpen)} />
+                      </div>
+                  ):
+                  (
+                    
+                  <div>
+                  <IoIosArrowDropleft onClick={() => setIsOpen(!isOpen)} style={{fontSize:"2rem", color:"#007CBA",position:"fixed", top:"2%", marginLeft:"187px", cursor:"pointer" }} /> 
+                  <Sidebar/>
+
+                  </div>
+
+                  )  
+                  }
+              </div>
 
 
     <invest.Container>
