@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import Navbar from '../Navbar/Navbar';
 import { AdminSbarcontent } from './AdminSbarcontent';
 import { IoIosContact } from "react-icons/io";
-import { MdLogout } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
 // import { Oval } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../../images/Assets/icons/logo 1.png';
@@ -127,6 +127,13 @@ function AdminSidebar() {
                 </ul>
 
      <div className="d">
+
+         <div className="d-flex justify-content-center ">
+            <button style={{padding:"5px 3rem", cursor:"pointer", border:'none', background:"transparent"}} >
+                <BiLogOut style={{fontSize:"2rem",color:"#007CBA", marginRight:"1rem"}} />
+                  Log out
+                </button>
+            </div>
      <sbarmain.Image
         className="d-block mx-auto mt-2"
         src={logo}

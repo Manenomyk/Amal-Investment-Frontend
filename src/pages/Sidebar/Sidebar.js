@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import Navbar from '../Navbar/Navbar';
 import { Sbarcontent } from './Sbarcontent';
 import { IoIosContact } from "react-icons/io";
+import { BiLogOut } from "react-icons/bi";
 import { MdLogout } from "react-icons/md";
 // import { Oval } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
@@ -132,6 +133,13 @@ function Sidebar() {
                 </ul>
 
      <div className="d">
+
+ <div className="d-flex justify-content-center ">
+ <button style={{padding:"5px 3rem", cursor:"pointer", border:'none', background:"transparent"}} >
+        <BiLogOut style={{fontSize:"2rem",color:"#007CBA", marginRight:"1rem"}} />
+            Log out
+    </button>
+ </div>
      <sbarmain.Image
         className="d-block mx-auto mt-2"
         src={logo}

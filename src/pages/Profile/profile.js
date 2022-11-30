@@ -8,7 +8,8 @@ import {Link} from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
-import axios from 'react'
+import axios from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 const user = JSON.parse(localStorage.getItem('auth_userName'));
@@ -17,67 +18,91 @@ function Profile() {
 
   const [isOpen ,setIsOpen] = useState(false);
 
+ 
+  const navigate = useNavigate();
+  const [serverError, setServerError] = useState("")
+  const [loading, setLoading] = useState(false);
+  const [successResponse,setSuccessResponse]=useState("");
+  // const [errors, seterrors] = useState({});
+  const [isSub, setsub] = useState(false);
+  const [reg, setregInput] = useState({
+    name:'',
+    email:'',
+    phone_number:'',
+    id_number:'',
+    location:'',
+      
+  }); 
   
-  const [ takeInput,  entityInput]= useState({
-    firstName: '',
-    lastName: '',
-    phone_number: '',
-    email: '',
-    citizenship: '',
-    kraPin:'',
-    copyOfID:'',
+  const handleIput = (e) => {
+      e.persist();
+      setregInput({...reg, [e.target.name]: e.target.value})
+  }
+  
+  const regSubmit = (e) => {
+  e.preventDefault();
+  
+  // seterrors(validate(reg));
+  setsub(true);
+  
+  const details = {
+      name: reg.name,
+      email: reg.email,
+      phone_number: reg.phone_number,
+      id_number: reg.id_number,
+      location: reg.location,
+  
+  }
+  
+  setLoading(true);
+  try {
+      axios.post(`/api/register`, details ).then(res =>{
+         console.log(res)
+
+        setLoading(false);
+          if(res.status === 200) {
+
+            setSuccessResponse(" Profile updated successfully.");
+            setTimeout(() => {
+              setSuccessResponse("")
+            }, 2000);
     
-
-});
-
-const [firstName, setFirstName] = useState("");
-const [lastName, setLastName ] = useState("")
-const [phone_number, setPhone] = useState("")
-const [email, setEmail] = useState("")
-const [citizenship, setCitizenship] = useState("")
-const [copyOfID, setIdCopy] = useState({})
-const [kraPin, setKra] = useState({})
-
-const pageSubmit = (e) => {
-e.preventDefault();
-const formData = new FormData();
-if(e.target.files && e.target.files[0]){
-formData.append('kraPin', e.target.files[0]);
-}
-formData.append('firstName', firstName);
-formData.append('lastName', lastName);
-formData.append('phone_number', phone_number);
-formData.append('email', email);
-formData.append('citizenship', citizenship);
-formData.append('copyOfID', copyOfID)
-formData.append('kraPin', kraPin)
+              // alert("registered successfully")
+              // navigate('/clerklogin');
+  
+          } else {
+  
+          }
+  
+      }) .catch(res =>{
+       
+        
+      setLoading(false);
+      setServerError("Invalid credentials plz check them out")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+      
+      });
+      
 
 
-// const data = {
-//   firstName: takeInput.firstName,
-//   lastName: takeInput.lastName,
-//   phone: takeInput.phone,
-//   email: takeInput.email,
-//   citizenship: takeInput.citizenship,
-//   kra: takeInput.kra,
-//   idCopy: takeInput.idCopy,
+  } catch (error) {
+      
+      // alert("oops, invalid credentials")
 
-// }
-axios.post(`/api/user/update-profile/${user.id}`, formData).then (res =>{
-console.log(res);
-if(res.data.status === 200){
+      setLoading(false);
+      setServerError("Invalid credentials.")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+    
+      // navigate('/clerkregister');
+  }
+      
+  
+      }
 
-localStorage.setItem('auth_token', res.data.token);
-localStorage.setItem('auth_name', res.data.firstName);
-
-}else
-{
-
-}
-
-});
-
-}
 
 
   return (
@@ -121,58 +146,73 @@ localStorage.setItem('auth_name', res.data.firstName);
                   
                     {/* <ProFormi /> */}
                     <div>
-                    <p>First name</p>
+                    <p>Name</p>
                     <input 
-                      className={`form-control shadow-none'}`}
-                      name="firstName"
-                      value={firstName}
+                      className={`form-control shadow-none`}
+                      name="name"
+                      
                       autoComplete='off'
                       id='regInput'
-                      onChange = {(e) => setFirstName(e.target.value)}
+                      onChange={handleIput} value={reg.name}
                       />
 
-                      <p>Last Name</p>
-                    <input 
-                      className={`form-control shadow-none'}`}
-                      name="lastName"
-                      value={lastName}
-                      autoComplete='off'
-                      id='regInput'
-                      onChange = {(e) => setLastName(e.target.value)}
-                      />
 
-                      <p>Phone number</p>
+                  <p>Email address</p>
                     <input 
-                      className={`form-control shadow-none'}`}
-                      name="phone_number"
-                      value={phone_number}
-                      autoComplete='off'
-                      id='regInput'
-                      onChange = {(e) => setPhone(e.target.value)}
-                      />
-
-                      <p>Email address</p>
-                    <input 
-                      className={`form-control shadow-none'}`}
+                      className={`form-control shadow-none`}
                       name="email"
-                      value={email}
+                      
                       autoComplete='off'
                       id='regInput'
-                      onChange = {(e) => setEmail(e.target.value)}
+                      onChange={handleIput} value={reg.email}
                       />
 
-                      <p>Citizenship</p>
+                    <p>Phone number</p>
+                    <input 
+                      className={`form-control shadow-none`}
+                      name="phone_number"
+                      
+                      autoComplete='off'
+                      id='regInput'
+                      onChange={handleIput} value={reg.phone_number}
+                      />
+
+
+                      <p>Id number</p>
+                    <input 
+                      className={`form-control shadow-none`}
+                      name="id_number"
+                      
+                      autoComplete='off'
+                      id='regInput'
+                      onChange={handleIput} value={reg.id_number}
+                      />
+
+                    
+                  
+
+                   <p>Location</p>
+                    <input 
+                      className={`form-control shadow-none`}
+                      name="location"
+                      
+                      autoComplete='off'
+                      id='regInput'
+                      onChange={handleIput} value={reg.location}
+                      />
+
+                      {/* <p>Citizenship</p>
                       <select name='citizenship' id='citizen' onChange = {(e) => setCitizenship(e.target.value)} className='form-control shadow-none'>
                         <option value="selected">Citizenship</option>
                         <option value="">Kenya</option>
                         <option value="">Uganda</option>
                         <option value="">Tanzania</option>
                         <option value="">Rwanda</option>
-                        </select>
+                        </select> */}
                   </div>
                   
                 </div>
-                <div className='d-flex mt-3 mb-3 justify-content-center' style={{gap:"1rem"}}>
+                {/* <div className='d-flex mt-3 mb-3 justify-content-center' style={{gap:"1rem"}}>
                           <input 
                             className={`form-control shadow-none'}`}
                             style={{width:"15rem"}}
@@ -195,11 +235,11 @@ localStorage.setItem('auth_name', res.data.firstName);
                               id='regInpu'
                               onChange = {(e) => setIdCopy(e.target.files[0])}
                               />
-                        </div>
+                        </div> */}
 
                     <p className='forgotpass'><b><i>Change password? <IoIosArrowDropright id='arrow' /></i></b></p>
                     <div className='d-flex justify-content-center'>
-                    <button onClick ={pageSubmit} className='probtn'><i>Update</i></button>
+                    <button onClick={regSubmit} className='probtn'><i>Update</i></button>
                     </div>
                 <div>
 
