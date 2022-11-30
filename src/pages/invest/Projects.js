@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import * as adminshares from 'react-bootstrap';
+import Sidebar from '../Sidebar/Sidebar';
 import {Link} from 'react-router-dom';
+import * as adminnew from 'react-bootstrap';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 
-function Adminshares() {
-  const [isOpen ,setIsOpen] = useState(false);
+
+function Projects() {
+    const [isOpen ,setIsOpen] = useState(false);
+
   return (
     <div className='d-flex'>
-                <div>
+            <div>
                     {!isOpen ?
                   (
                     <div style={{marginTop:"1rem",fontSize:'25px', cursor:"pointer",marginLeft:"1rem"}}>
@@ -20,7 +22,7 @@ function Adminshares() {
                     
                   <div>
                   <IoIosArrowDropleft onClick={() => setIsOpen(!isOpen)} style={{fontSize:"2rem", color:"#007CBA",position:"fixed", top:"2%", marginLeft:"187px", cursor:"pointer" }} /> 
-                  <AdminSidebar/>
+                  <Sidebar/>
 
                   </div>
 
@@ -28,42 +30,36 @@ function Adminshares() {
                   }
               </div>
 
-      <adminshares.Container >
-             
-             <adminshares.Nav className= "mt-2 pt-3 pb-2"
-                   activeKey="/home"
-                   onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-                 >
-                   <adminshares.Nav.Item>
-                     <adminshares.Nav.Link href="/adminshares" id="actives">Existing shares</adminshares.Nav.Link>
-                   </adminshares.Nav.Item>
-                   <adminshares.Nav.Item>
-                     <adminshares.Nav.Link href="/AdminNewshares" id="other">New shares</adminshares.Nav.Link>
-                   </adminshares.Nav.Item>
-             </adminshares.Nav>
-             
-             <adminshares.Card>
-               <adminshares.Card.Body>
-               <adminshares.Row>
-                   <adminshares.Col md= {8} sm= {4} xs= {12} >
+
+              <adminnew.Container>
+                
+              <adminnew.Card>
+               <adminnew.Card.Body>
+               <adminnew.Row>
+                   <adminnew.Col md= {8} sm= {4} xs= {12} >
                    <input type="text" placeholder="Search"/>
-                   </adminshares.Col>
-                   <adminshares.Col md= {2} sm= {3} xs= {4}><button  id='entibtn' className="btn btn-outline-dark">Filter</button></adminshares.Col>
-                   <adminshares.Col md= {2} sm= {1} xs= {2}><button id='entibtn' className="btn btn-outline-dark">Export</button></adminshares.Col>
-                   </adminshares.Row>
-                   </adminshares.Card.Body>
-             </adminshares.Card>
-                 
-               
-                   <table className="table table-striped" style={{fontSize: "small"}}>
+                   </adminnew.Col>
+                   {/* <adminnew.Col md= {2} sm= {3} xs= {4}><button  id='entibtn' className="btn btn-outline-dark">ADD</button></adminnew.Col> */}
+                   <adminnew.Col md= {2} sm= {3} xs= {4}><button  id='entibtn' className="btn btn-outline-dark">Filter</button></adminnew.Col>
+                   <adminnew.Col md= {2} sm= {1} xs= {2}><button id='entibtn' className="btn btn-outline-dark">Export</button></adminnew.Col>
+                   </adminnew.Row>
+                   </adminnew.Card.Body>
+             </adminnew.Card>
+
+
+             
+             <table className="table table-striped" style={{fontSize: "small"}}>
                                      <thead>
                                        <tr>
                                           
-                                           <th scope="col">Company Name</th>
+                                           <th scope="col">Project Name</th>
                                            <th scope="col">Sector</th>
-                                           <th scope="col">Total shares </th>
-                                           <th scope="col">Share prices</th>
-                                           <th scope="col">Share value</th>
+                                           <th scope="col">Goal amount </th>
+                                           <th scope="col">Max investment</th>
+                                           <th scope="col">% Stake</th>
+                                           <th scope="col">Opening date</th>
+                                           <th scope="col">Closing date</th>
+                                           <th scope="col">Deal type</th>
                                            <th scope="col">Action</th>
                                          </tr>
                                      </thead>
@@ -76,7 +72,10 @@ function Adminshares() {
                                      <td>10,000</td>
                                      <td>100</td>
                                      <td>60M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
+                                     <td>10,000</td>
+                                     <td>100</td>
+                                     <td>60M</td>
+                                     <td><Link to={"/invest"} >Invest</Link></td>
                                      
          
                                    </tr>
@@ -90,7 +89,10 @@ function Adminshares() {
                                      <td>20,000</td>
                                      <td>100</td>
                                      <td>20M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
+                                     <td>10,000</td>
+                                     <td>100</td>
+                                     <td>60M</td>
+                                     <td><Link to={"/invest"} >Invest</Link></td>
                                    </tr>
                                  </tbody>
 
@@ -102,7 +104,10 @@ function Adminshares() {
                                      <td>50,000</td>
                                      <td>100</td>
                                      <td>5M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
+                                     <td>10,000</td>
+                                     <td>100</td>
+                                     <td>60M</td>
+                                     <td><Link to={"/invest"} >Invest</Link></td>
                                    </tr>
                                  </tbody>
 
@@ -114,14 +119,19 @@ function Adminshares() {
                                      <td>10,000</td>
                                      <td>100</td>
                                      <td>4M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
+                                     <td>10,000</td>
+                                     <td>100</td>
+                                     <td>60M</td>
+                                     <td><Link to={"/invest"} >Invest</Link></td>
                                    </tr>
                                  </tbody>
+
+                       
                          </table> 
 
-                         </adminshares.Container>
+            </adminnew.Container> 
     </div>
   )
 }
 
-export default Adminshares
+export default Projects

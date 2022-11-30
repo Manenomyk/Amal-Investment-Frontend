@@ -35,10 +35,10 @@ function AdminNewproject() {
                    onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
                  >
                    <adminnew.Nav.Item>
-                     <adminnew.Nav.Link href="/home" id="actives">All projects</adminnew.Nav.Link>
+                     <adminnew.Nav.Link href="/AdminNewproject" id="actives">All projects</adminnew.Nav.Link>
                    </adminnew.Nav.Item>
                    <adminnew.Nav.Item>
-                     <adminnew.Nav.Link href="/Newshares" id="other">Projects awaiting approval</adminnew.Nav.Link>
+                     <adminnew.Nav.Link href="/AdminAddproject" id="other">Add New project</adminnew.Nav.Link>
                    </adminnew.Nav.Item>
              </adminnew.Nav>
              <adminnew.Card>

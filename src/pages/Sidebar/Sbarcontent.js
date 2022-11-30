@@ -43,7 +43,7 @@ export const Sbarcontent = [
         fluid
         />,
         title: "Investment",
-        link: "./invest"
+        link: "./projects"
     },
     {
         icon:

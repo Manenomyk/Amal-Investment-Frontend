@@ -63,8 +63,9 @@ function Approveinvestor() {
 
       <admi.Row>
         <admi.Col className='mx-auto' lg={7}>
-          <div id='admiapprov' className='d-flex justify-content-center'>
+          <div id='admiapprov' style={{gap:"1rem"}} className='d-flex justify-content-center'>
           <button className='approvbtn'>Approve</button>
+          <button className='approvbtn'>Reject</button>
           </div>
         </admi.Col>
       </admi.Row>

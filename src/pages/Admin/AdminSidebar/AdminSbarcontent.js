@@ -15,7 +15,7 @@ export const AdminSbarcontent = [
         
     },
     {
-        title: "New projects",
+        title: "Projects",
         link: "./AdminNewproject"
     },
     {

@@ -15,6 +15,7 @@ import Shares from './pages/shares/Shares';
 import ViewMoreShares from './pages/shares/ViewMoreShares';
 import Invest from './pages/invest/Invest';
 import Raise from './pages/Raise/Raise';
+import Projects from './pages/invest/Projects';
 
 
 //admin
@@ -24,12 +25,14 @@ import ProjectApproval from './pages/Admin/NewProjects/ProjectApproval';
 import ProjectDelete from './pages/Admin/NewProjects/ProjectDelete';
 import AdminDashboard from './pages/Admin/AdminDashboard/AdminDashboard';
 import Adminshares from './pages/Admin/Adminshares/Adminshares';
+import AdminNewshares from './pages/Admin/Adminshares/AdminNewshares';
 import MoreShares from './pages/Admin/Adminshares/MoreShares';
 import AdminSidebar from './pages/Admin/AdminSidebar/AdminSidebar';
 import Approveinvestor from './pages/Admin/Approveinvestor/Approveinvestor';
 import Approveproject from './pages/Admin/Approveproject/Approveproject';
 import Investors from './pages/Admin/Investors/Investors';
 import AdminNewproject from './pages/Admin/AdminNewproject/AdminNewproject';
+import AdminAddproject from './pages/Admin/AdminNewproject/AdminAddproject';
 
 import Forgot from './pages/Admin/forgot/Forgot';
 
@@ -76,12 +79,14 @@ function App() {
         <Route path="/shares" element={<Shares/>}/>
         <Route path="/invest" element={<Invest/>}/>
         <Route path="/raise" element={<Raise/>}/>
+        <Route path="/projects" element={<Projects/>}/>
 
       {/* admin Routes */}
         <Route path="/projoApproval" element={<ProjectApproval/>}/>
         <Route path="/projoDelete" element={<ProjectDelete/>}/>
         <Route path="/investadminDelete" element={<InvestorDelete/>}/>
         <Route path="/adminshares" element={<Adminshares />}/>
+        <Route path="/adminnewshares" element={<AdminNewshares />}/>
         <Route path="/moreshares" element={<MoreShares />}/>
         <Route path="/admindashboard" element={<AdminDashboard/>}/>
         <Route path="/adminsidebar" element={<AdminSidebar/>}/>
@@ -90,6 +95,7 @@ function App() {
         <Route path="/investorApproval" element={<InvestorApproval/>}/>
         <Route path="/investors" element={<Investors />}/>
         <Route path="/adminnewproject" element={<AdminNewproject/>}/>
+        <Route path="/adminaddproject" element={<AdminAddproject/>}/>
 
         <Route path="/forgot" element={<Forgot/>}/>
         
