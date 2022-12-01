@@ -1,14 +1,103 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import "./invest.css";
 import * as invest from 'react-bootstrap';
 import tooltip from '../../images/Assets/icons/tooltip.png'
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 function Invest() {
 
     const [isOpen ,setIsOpen] = useState(false);
+    
+
+    
+  const navigate = useNavigate();
+  const [serverError, setServerError] = useState("")
+  const [loading, setLoading] = useState(false);
+  const [successResponse,setSuccessResponse]=useState("");
+  // const [errors, seterrors] = useState({});
+  const [isSub, setsub] = useState(false);
+  const [reg, setregInput] = useState({
+    name:'',
+    email:'',
+    phone_number:'',
+    id_number:'',
+    location:'',
+      
+  }); 
+  
+  const handleIput = (e) => {
+      e.persist();
+      setregInput({...reg, [e.target.name]: e.target.value})
+  }
+  
+  const regSubmit = (e) => {
+  e.preventDefault();
+  
+  // seterrors(validate(reg));
+  setsub(true);
+  
+  const details = {
+      name: reg.name,
+      email: reg.email,
+      phone_number: reg.phone_number,
+      id_number: reg.id_number,
+      location: reg.location,
+  
+  }
+  
+  setLoading(true);
+  try {
+      axios.post(`/api/register`, details ).then(res =>{
+         console.log(res)
+
+        setLoading(false);
+          if(res.status === 200) {
+
+            setSuccessResponse(" Profile updated successfully.");
+            setTimeout(() => {
+              setSuccessResponse("")
+            }, 2000);
+    
+              // alert("registered successfully")
+              // navigate('/clerklogin');
+  
+          } else {
+  
+          }
+  
+      }) .catch(res =>{
+       
+        
+      setLoading(false);
+      setServerError("Invalid credentials plz check them out")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+      
+      });
+      
+
+
+  } catch (error) {
+      
+      // alert("oops, invalid credentials")
+
+      setLoading(false);
+      setServerError("Invalid credentials.")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+    
+      // navigate('/clerkregister');
+  }
+      
+  
+      }
+
 
   return (
     <div className='d-flex'>

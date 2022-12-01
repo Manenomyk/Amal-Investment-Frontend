@@ -1,12 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import * as adminshares from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
 
 function Adminshares() {
   const [isOpen ,setIsOpen] = useState(false);
+
+const [details, getDetails] = useState([]);
+const getData = async () => {
+    try {
+        const data = await axios.get("/user/show-my-share/{id}");
+        console.log(data.data.data);
+        getDetails(data.data.data);
+
+    } catch (e) {
+        console.log("no execution");
+       
+    }
+};
+
+useEffect(()=>{
+    getData();
+}, []);
+
+console.log('deta',details);
+
+
   return (
     <div className='d-flex'>
                 <div>
@@ -69,7 +91,11 @@ function Adminshares() {
                                      </thead>
 
                                  <tbody>
-                                   <tr>
+                                   {details.map((item,index)=>(
+           
+                                        console.log('i',item),
+
+                                    <tr key={index}>
                                      
                                      <td>kazi Coffee</td>
                                      <td>Agriculture</td>
@@ -80,6 +106,9 @@ function Adminshares() {
                                      
          
                                    </tr>
+
+                              ))}
+
                                  </tbody>
 
                                  <tbody>

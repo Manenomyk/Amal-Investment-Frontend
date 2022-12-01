@@ -15,11 +15,21 @@ import teamviewer from '../../images/Assets/icons/teamviewer.png';
 function Homepage() {
   return (
     <div>
-      <home.Container>
-          navbar
-      </home.Container>
+    
+      <home.Navbar bg="dark" variant="dark" sticky="top">
+        <home.Container>
+          <home.Navbar.Brand href="#home" style={{fontSize:"2rem"}}>Amal<span>Capital</span> </home.Navbar.Brand>
+          <home.Nav className="justify-content-end">
+            <home.Nav.Link href="#home" style={{fontSize:"20px"}}>Home</home.Nav.Link>
+            <home.Nav.Link href="/Register" style={{fontSize:"20px"}}>Register</home.Nav.Link>
+            <home.Nav.Link href="/login" style={{fontSize:"20px"}}>Login</home.Nav.Link>
+            <home.Nav.Link href="#contact" style={{fontSize:"20px"}}>Contact</home.Nav.Link>
+          </home.Nav>
+        </home.Container>
+      </home.Navbar>
+     
 
-      <div className="couresel">
+      <div id='home' className="couresel">
         <home.Carousel>
                 <home.Carousel.Item>
                       <home.Image
@@ -299,7 +309,7 @@ function Homepage() {
 
       <home.Row id='contactpage'>
         <home.Col lg={3} className='mx-auto'>
-          <h4 className='contheads'>About us</h4>
+          <h4 id="contact" className='contheads'>About us</h4>
 
           <p>
           Amal Capital provides a one stop shop 

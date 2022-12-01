@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Etity.css';
 import * as ent from 'react-bootstrap';
 import Sidebar from '../Sidebar/Sidebar';
@@ -13,6 +13,26 @@ import { IoMdContact } from "react-icons/io";
 function Entity() {
 
   const [isOpen ,setIsOpen] = useState(false);
+
+  
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("http://fixapi.chengegikonyo.com/api/admin/Super-Admin/technicians");
+          console.log(data.data.data);
+          getDetails(data.data.data);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
 
    
   const navigate = useNavigate();
@@ -247,7 +267,12 @@ function Entity() {
 
 
   <tbody>
-    <tr style= { { fontSize: "15px",height:"25px",color:"gray"}} >
+  {details.map((item,index)=>(
+           
+           console.log('i',item),
+           
+          <tr  key={index} style= { { fontSize: "15px",height:"25px",color:"gray"}}> 
+    
       <th >Jenga builders</th>
       <td >Construction</td>
       <td>7135-00100</td>
@@ -256,6 +281,8 @@ function Entity() {
       <td style={{paddingLeft:"20px"}}>7615765</td>
      
     </tr>
+    ) )}
+
     <tr style= { { fontSize: "15px",height:"25px", color:"gray"}}>
       <th >Safi housing</th>
       <td>Real Estate</td>

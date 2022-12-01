@@ -14,6 +14,9 @@ import axios from 'axios';
 
 import './Sidebar.css';
 
+
+
+const user = JSON.parse(localStorage.getItem('auth_name'));
 function Sidebar() {
 
 
@@ -22,43 +25,51 @@ function Sidebar() {
     const [loading, setLoading] = useState(false);
     const [successResponse,setSuccessResponse]=useState("");
     const navigate = useNavigate();
+
     const logoutSubmit = (e) => {
         e.preventDefault();
 
-        setLoading(true);
-        axios.post(`/api/logout`) .then(res =>{
-            setLoading(false);
+        localStorage.removeItem("auth_name");
+        localStorage.removeItem("auth_token");
 
-            if (res.status === 200) {
+        alert("Log out successfully");
+        navigate('/');
+        
+        // setLoading(true);
+        // axios.post(`/api/logout`) .then(res =>{
+        //     setLoading(false);
 
-                localStorage.removeItem("auth_token");
-                localStorage.removeItem("auth_name", JSON.stringify(res.data.user));
+        //     if (res.status === 200) {
+
+        //         localStorage.removeItem("auth_token");
+        //         localStorage.removeItem("auth_name", JSON.stringify(res.data.user));
         
         
-                setSuccessResponse("you have been registered successfully.");
-                setTimeout(() => {
-                  setSuccessResponse("")
-                }, 2000);
+        //         setSuccessResponse("you have been logged out successfully.");
+        //         setTimeout(() => {
+        //           setSuccessResponse("")
+        //         }, 2000);
 
-                navigate('/');
+        //         alert("Log out successfully")
+        //         navigate('/');
     
     
-            } else {
+        //     } else {
     
-                alert("Log out Incomplete")
+        //         alert("Log out Incomplete")
     
-            }
-        }).catch(res =>{
-
-                
-            setLoading(false);
-            setServerError("Failed to log out")
-            setTimeout(()=>{
-                setServerError("")
-            },2000)
+        //     }
+        // }).catch(res =>{
 
                 
-                });
+        //     setLoading(false);
+        //     setServerError("Failed to log out")
+        //     setTimeout(()=>{
+        //         setServerError("")
+        //     },2000)
+
+                
+        //         });
     }
 
 
@@ -98,8 +109,8 @@ function Sidebar() {
                     </div>
 
                     <div className="sbarname">
-                        <h5>Bahati Mike</h5>
-                        <p><i>mike@gmail.com</i></p>
+                        <h5>{user.user.name}</h5>
+                    <p><i>{user.user.email}</i></p>
                     </div>
                 </div>
                 <hr />
@@ -135,7 +146,7 @@ function Sidebar() {
      <div className="d">
 
  <div className="d-flex justify-content-center ">
- <button style={{padding:"5px 3rem", cursor:"pointer", border:'none', background:"transparent"}} >
+ <button onClick={logoutSubmit} style={{padding:"5px 3rem", cursor:"pointer", border:'none', background:"transparent"}} >
         <BiLogOut style={{fontSize:"2rem",color:"#007CBA", marginRight:"1rem"}} />
             Log out
     </button>

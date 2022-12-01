@@ -1,13 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import {Link} from 'react-router-dom';
 import * as adminnew from 'react-bootstrap';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
-
+import axios from 'axios';
 
 function Projects() {
     const [isOpen ,setIsOpen] = useState(false);
+    
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("http://fixapi.chengegikonyo.com/api/admin/Super-Admin/technicians");
+          console.log(data.data.data);
+          getDetails(data.data.data);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
+
+  
+
 
   return (
     <div className='d-flex'>
@@ -65,7 +87,11 @@ function Projects() {
                                      </thead>
 
                                  <tbody>
-                                   <tr>
+                                   {details.map((item,index)=>(
+           
+                                      console.log('i',item),
+                                
+                                <tr  key={index} > 
                                      
                                      <td>kazi Coffee</td>
                                      <td>Agriculture</td>
@@ -79,6 +105,9 @@ function Projects() {
                                      
          
                                    </tr>
+                               ) )}
+
+                               
                                  </tbody>
 
                                  <tbody>

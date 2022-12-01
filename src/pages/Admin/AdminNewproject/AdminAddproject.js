@@ -4,10 +4,107 @@ import {Link} from 'react-router-dom';
 import * as adminnew from 'react-bootstrap';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
+
+
+const user = JSON.parse(localStorage.getItem('auth_name'));
 function AdminAddproject() {
 
     const [isOpen ,setIsOpen] = useState(false);
+
+
+     
+  const navigate = useNavigate();
+  const [serverError, setServerError] = useState("")
+  const [loading, setLoading] = useState(false);
+  const [successResponse,setSuccessResponse]=useState("");
+  // const [errors, seterrors] = useState({});
+  const [isSub, setsub] = useState(false);
+  const [reg, setregInput] = useState({
+    project_name:'',
+    project_sector:'',
+    goal_amount:'',
+    max_investment:'',
+    stake:'',
+    opening_date:'',
+    closing_date:'',
+      
+  }); 
+  
+  const handleIput = (e) => {
+      e.persist();
+      setregInput({...reg, [e.target.name]: e.target.value})
+  }
+  
+  const regSubmit = (e) => {
+  e.preventDefault();
+  
+  // seterrors(validate(reg));
+  setsub(true);
+  
+  const details = {
+      project_name: reg.project_name,
+      project_sector: reg.project_sector,
+      goal_amount: reg.goal_amount,
+      max_investment: reg.max_investment,
+      stake: reg.stake,
+      opening_date: reg.opening_date,
+      closing_date: reg.closing_date,
+  
+  }
+  
+  setLoading(true);
+  try {
+      axios.post(`/api/admin/projects/add/${user.user.id}`, details ).then(res =>{
+         console.log(res)
+
+        setLoading(false);
+          if(res.status === 200) {
+
+            setSuccessResponse(" Profile updated successfully.");
+            setTimeout(() => {
+              setSuccessResponse("")
+            }, 2000);
+    
+              alert("registered successfully")
+              // navigate('/clerklogin');
+  
+          } else {
+  
+          }
+  
+      }) .catch(res =>{
+       
+        
+      setLoading(false);
+      setServerError("Invalid credentials plz check them out")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+      
+      });
+      
+
+
+  } catch (error) {
+      
+      // alert("oops, invalid credentials")
+
+      setLoading(false);
+      setServerError("Invalid credentials.")
+      setTimeout(()=>{
+        setServerError("")
+      },2000)
+    
+      // navigate('/clerkregister');
+  }
+      
+  
+      }
+
+
 
   return (
     <div className='d-flex'>
@@ -70,6 +167,8 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="project_name"
+                      onChange={handleIput} value={reg.project_name}
                       />
                     </div>
                     <div>
@@ -77,6 +176,8 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="project_sector"
+                      onChange={handleIput} value={reg.project_sector}
                       />
                     </div>
                    
@@ -94,6 +195,8 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="goal_amount"
+                      onChange={handleIput} value={reg.goal_amount}
                       />
                     </div>
                     <div>
@@ -101,6 +204,8 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="max_investment"
+                      onChange={handleIput} value={reg.max_investment}
                       />
                     </div>
                     
@@ -112,6 +217,8 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="stake"
+                      onChange={handleIput} value={reg.stake}
                       />
                     </div>
                     <div>
@@ -119,6 +226,9 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="opening_date"
+                      onChange={handleIput} value={reg.opening_date}
+                      type="date"
                       />
                     </div>
 
@@ -131,6 +241,9 @@ function AdminAddproject() {
                       <input 
                       className={`form-control shadow-none '}`}
                       id='regInput'
+                      name="closing_date"
+                      onChange={handleIput} value={reg.closing_date}
+                      type="date"
                       />
                     </div>
 
@@ -142,7 +255,7 @@ function AdminAddproject() {
                   
                   <div id='deta' className='d-flex justify-content-center mt-3'>
                        
-                        <button className='probtn' type='submit'><i>Create project</i></button>
+                        <button onClick={regSubmit} className='probtn' type='submit'><i>Create project</i></button>
                     </div>
                   
                     {/* <RaiseFormi /> */}

@@ -248,7 +248,7 @@ function BuyShares() {
                         <button className='buybtn'>BUY</button>
                         )}
                     </div>
-                <button onClick={detailsubmit} className='buybtn'>BUY</button>
+                
               </div>
             </buy.Col>
           </buy.Row>

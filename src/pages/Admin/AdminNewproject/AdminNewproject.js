@@ -1,12 +1,38 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import {Link} from 'react-router-dom';
 import * as adminnew from 'react-bootstrap';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
 
+
+const user = JSON.parse(localStorage.getItem('auth_name'));
 function AdminNewproject() {
   const [isOpen ,setIsOpen] = useState(false);
+
+
+  
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("/api/admin/projects/get");
+          console.log(data);
+          getDetails(data.data.data);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
+
+  
   return (
     <div className='d-flex'>
                 <div>
@@ -72,7 +98,11 @@ function AdminNewproject() {
                                      </thead>
 
                                  <tbody>
-                                   <tr>
+                                    {details.map((item,index)=>(
+           
+                                    console.log('i',item),
+
+                                    <tr key={index}>
                                      
                                      <td>kazi Coffee</td>
                                      <td>Agriculture</td>
@@ -86,6 +116,10 @@ function AdminNewproject() {
                                      
          
                                    </tr>
+
+                                 ))}
+
+                                 
                                  </tbody>
 
                                  <tbody>

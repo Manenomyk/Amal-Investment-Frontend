@@ -49,7 +49,7 @@ const onSubmit =async (values) =>{
           setSuccessResponse("")
         }, 3000);
   
-        // alert("logged in successfully");
+        alert("logged in successfully");
   
         navigate('/dashboard');
   

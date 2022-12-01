@@ -12,7 +12,7 @@ import axios from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const user = JSON.parse(localStorage.getItem('auth_userName'));
+const user = JSON.parse(localStorage.getItem('auth_name'));
 
 function Profile() {
 
@@ -56,7 +56,7 @@ function Profile() {
   
   setLoading(true);
   try {
-      axios.post(`/api/register`, details ).then(res =>{
+      axios.post(`/api/user/update/${user.user.id}`, details ).then(res =>{
          console.log(res)
 
         setLoading(false);
@@ -67,7 +67,7 @@ function Profile() {
               setSuccessResponse("")
             }, 2000);
     
-              // alert("registered successfully")
+              alert("Profile updated successfully");
               // navigate('/clerklogin');
   
           } else {
@@ -150,10 +150,10 @@ function Profile() {
                     <input 
                       className={`form-control shadow-none`}
                       name="name"
-                      
+                      onChange={handleIput} value={reg.name}
                       autoComplete='off'
                       id='regInput'
-                      onChange={handleIput} value={reg.name}
+                      
                       />
 
 
@@ -239,7 +239,7 @@ function Profile() {
 
                     <p className='forgotpass'><b><i>Change password? <IoIosArrowDropright id='arrow' /></i></b></p>
                     <div className='d-flex justify-content-center'>
-                    <button onClick={regSubmit} className='probtn'><i>Update</i></button>
+                    <button onClick={regSubmit} className='probtn' ><i>Raise capital</i></button>
                     </div>
                 <div>
 

@@ -1,13 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import { Link } from "react-router-dom";
 import * as admininve from 'react-bootstrap';
 import './Investors.css';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
+
 
 function Investors() {
   const [isOpen ,setIsOpen] = useState(false);
+
+  
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("/user/show-my-share/{id}");
+          console.log(data.data.data);
+          getDetails(data.data.data);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
+
 
   return (
     <div className='d-flex'>
@@ -45,7 +68,11 @@ function Investors() {
                                       </thead>
 
                                   <tbody>
-                                    <tr>
+                                   {details.map((item,index)=>(
+           
+                                        console.log('i',item),
+
+                                    <tr key={index}>
                                       
                                       <td>kazi Coffee</td>
                                       <td>Agriculture</td>
@@ -56,6 +83,10 @@ function Investors() {
                                       
           
                                     </tr>
+
+                              ))}
+
+
                                   </tbody>
 
                                   <tbody>

@@ -49,14 +49,15 @@ console.log(values)
          console.log(res)
 
         setLoading(false);
-          if(res.status === 201) {
+          if(res.status === 200) {
 
             setSuccessResponse("you have been registered successfully.");
             setTimeout(() => {
               setSuccessResponse("")
             }, 2000);
     
-              // alert("registered successfully")
+              alert("registered successfully");
+
               navigate('/login');
   
           } else {
