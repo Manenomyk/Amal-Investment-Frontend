@@ -1,12 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./shares.css";
 import * as view from 'react-bootstrap';
 import Sidebar from '../Sidebar/Sidebar';
 import { FaBars } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function ViewMoreShares() {
   const [isOpen ,setIsOpen] = useState(false);
+
+  
+  const [details, getDetails] = useState([]);
+  const getData = async () => {
+      try {
+          const data = await axios.get("/api/admin/projects/get");
+          console.log(data.data.object);
+          getDetails(data.data.project);
+  
+      } catch (e) {
+          console.log("no execution");
+         
+      }
+  };
+  
+  useEffect(()=>{
+      getData();
+  }, []);
+  
+  console.log('deta',details);
+
 
   return (
     <div className='d-flex'>
@@ -32,8 +56,14 @@ function ViewMoreShares() {
         <view.Container>
             <view.Row className='mt-3 mb-4'>
                 <view.Col id='viewmore' lg={7} className='mx-auto'>
+
+                  
                     <h4 className='text-center'><i><u>Kazi coffee</u></i></h4>
                     <div id='viewdetails' className='d-flex justify-content-center'>
+                      
+                      
+                      
+                      
                       <div>
                         <p>Share purchase price: $100</p>
                       </div>

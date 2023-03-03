@@ -72,7 +72,7 @@ function Raise() {
   
   setLoading(true);
   try {
-      axios.post(`/api/user/invest/${user.user.id}`, details ).then(res =>{
+      axios.post(`/api/user/capital/raise/${user.user.id}`, details ).then(res =>{
          console.log(res)
 
         setLoading(false);

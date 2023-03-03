@@ -8,6 +8,8 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
+
+const user = JSON.parse(localStorage.getItem('auth_name'));
 function Invest() {
 
     const [isOpen ,setIsOpen] = useState(false);
@@ -21,11 +23,9 @@ function Invest() {
   // const [errors, seterrors] = useState({});
   const [isSub, setsub] = useState(false);
   const [reg, setregInput] = useState({
-    name:'',
-    email:'',
-    phone_number:'',
-    id_number:'',
-    location:'',
+    amount:'',
+    agree:'',
+    
       
   }); 
   
@@ -41,17 +41,13 @@ function Invest() {
   setsub(true);
   
   const details = {
-      name: reg.name,
-      email: reg.email,
-      phone_number: reg.phone_number,
-      id_number: reg.id_number,
-      location: reg.location,
-  
+      amount: reg.amount,
+      agree: reg.agree,
   }
   
   setLoading(true);
   try {
-      axios.post(`/api/register`, details ).then(res =>{
+      axios.post(`/api/user/invest/${user.user.id}`, details ).then(res =>{
          console.log(res)
 
         setLoading(false);
@@ -148,7 +144,13 @@ function Invest() {
             <invest.Col lg={8} className="mx-auto">
                 <p className=''>How much would you like to invest?</p>
                 <div className='d-flex'>
-                <input id='inveoption' placeholder='AMOUNT' className='form-control shadow-none' type="text" />
+                <input id='inveoption'
+                    name="amount"
+                      onChange={handleIput} value={reg.amount}
+                      placeholder='AMOUNT'
+                       className='form-control shadow-none' type="text"
+                       
+                       />
                 <select id='inveoption1' className='form-control shadow-none'>
                         <option >Euros</option>
                         <option>$USD</option>
@@ -176,8 +178,12 @@ function Invest() {
                 <div id='investtype' className='d-flex mb-1'>
                    <div className='d-flex'>
                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                    <label className="form-check-label" htmlFor="defaultCheck1">
-                    Debt:
+                    <label 
+                    name="agree"
+                    onChange={handleIput} value={reg.agree}
+                    className="form-check-label" 
+                    htmlFor="defaultCheck1">
+                    I agree
                     </label>
                    </div>
                     <input id='inveinputs2' className="form-control shadow-none" type="text" placeholder="Amount"/>
@@ -255,17 +261,9 @@ function Invest() {
 
         <invest.Row>
             <invest.Col lg={12} id="buybtn" className=" d-flex justify-content-center mt-4">
-            <div>
-              <invest.Image
-                className="d-block mx-auto"
-                src={tooltip}
-                style={{fontSize:"15px", cursor:"pointer"}}
-                alt="First slide"
-                fluid
-                />
-              </div>
+            
               <div>
-                <button className='buybtn'>BUY</button>
+                <button onClick={regSubmit}  className='buybtn'>BUY</button>
               </div>
             </invest.Col>
         </invest.Row>

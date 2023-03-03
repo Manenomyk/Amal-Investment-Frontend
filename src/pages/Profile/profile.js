@@ -239,7 +239,7 @@ function Profile() {
 
                     <p className='forgotpass'><b><i>Change password? <IoIosArrowDropright id='arrow' /></i></b></p>
                     <div className='d-flex justify-content-center'>
-                    <button onClick={regSubmit} className='probtn' ><i>Raise capital</i></button>
+                    <button onClick={regSubmit} className='probtn' type='submit'><i>Raise capital</i></button>
                     </div>
                 <div>
 

@@ -12,9 +12,9 @@ function Projects() {
   const [details, getDetails] = useState([]);
   const getData = async () => {
       try {
-          const data = await axios.get("http://fixapi.chengegikonyo.com/api/admin/Super-Admin/technicians");
+          const data = await axios.get("/api/admin/projects/get");
           console.log(data.data.data);
-          getDetails(data.data.data);
+          getDetails(data.data.project);
   
       } catch (e) {
           console.log("no execution");
@@ -93,15 +93,15 @@ function Projects() {
                                 
                                 <tr  key={index} > 
                                      
-                                     <td>kazi Coffee</td>
-                                     <td>Agriculture</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
-                                     <td><Link to={"/invest"} >Invest</Link></td>
+                                     <td> { item.project_name}</td>
+                                     <td>{ item.project_sector}</td>
+                                     <td>{ item.goal_amount}</td>
+                                     <td>{ item.max_investment}</td>
+                                     <td>{ item.stake}</td>
+                                     <td>{ item.opening_date}</td>
+                                     <td>{ item.closing_date}</td>
+                                     <td>{ item.project_name}</td>
+                                     <td><Link to={"/ViewMoreShares"} >View more</Link></td>
                                      
          
                                    </tr>
@@ -110,50 +110,6 @@ function Projects() {
                                
                                  </tbody>
 
-                                 <tbody>
-                                   <tr>
-                                     
-                                     <td>Good House</td>
-                                     <td>Real Estate</td>
-                                     <td>20,000</td>
-                                     <td>100</td>
-                                     <td>20M</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
-                                     <td><Link to={"/invest"} >Invest</Link></td>
-                                   </tr>
-                                 </tbody>
-
-                                 <tbody>
-                                   <tr>
-                                     
-                                     <td>Cut Bank</td>
-                                     <td>Finance</td>
-                                     <td>50,000</td>
-                                     <td>100</td>
-                                     <td>5M</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
-                                     <td><Link to={"/invest"} >Invest</Link></td>
-                                   </tr>
-                                 </tbody>
-
-                                 <tbody>
-                                   <tr>
-                                    
-                                     <td>Net Tech</td>
-                                     <td>Technology</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>4M</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
-                                     <td><Link to={"/invest"} >Invest</Link></td>
-                                   </tr>
-                                 </tbody>
 
                        
                          </table> 

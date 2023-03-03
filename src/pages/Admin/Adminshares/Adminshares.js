@@ -12,9 +12,9 @@ function Adminshares() {
 const [details, getDetails] = useState([]);
 const getData = async () => {
     try {
-        const data = await axios.get("/user/show-my-share/{id}");
-        console.log(data.data.data);
-        getDetails(data.data.data);
+        const data = await axios.get("/api/admin/shares/get");
+        console.log(data);
+        getDetails(data.data.share);
 
     } catch (e) {
         console.log("no execution");
@@ -97,11 +97,11 @@ console.log('deta',details);
 
                                     <tr key={index}>
                                      
-                                     <td>kazi Coffee</td>
-                                     <td>Agriculture</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>60M</td>
+                                     <td>{item.company_name}</td>
+                                     <td>{item.sector}</td>
+                                     <td>{item.total_shares}</td>
+                                     <td>{item.share_prices}</td>
+                                     <td>{item.share_on_offer}</td>
                                      <td><Link to={"/MoreShares"} >View more</Link></td>
                                      
          
@@ -109,42 +109,6 @@ console.log('deta',details);
 
                               ))}
 
-                                 </tbody>
-
-                                 <tbody>
-                                   <tr>
-                                     
-                                     <td>Good House</td>
-                                     <td>Real Estate</td>
-                                     <td>20,000</td>
-                                     <td>100</td>
-                                     <td>20M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
-                                   </tr>
-                                 </tbody>
-
-                                 <tbody>
-                                   <tr>
-                                     
-                                     <td>Cut Bank</td>
-                                     <td>Finance</td>
-                                     <td>50,000</td>
-                                     <td>100</td>
-                                     <td>5M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
-                                   </tr>
-                                 </tbody>
-
-                                 <tbody>
-                                   <tr>
-                                    
-                                     <td>Net Tech</td>
-                                     <td>Technology</td>
-                                     <td>10,000</td>
-                                     <td>100</td>
-                                     <td>4M</td>
-                                     <td><Link to={"/MoreShares"} >View more</Link></td>
-                                   </tr>
                                  </tbody>
                          </table> 
 
